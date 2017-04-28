@@ -15,6 +15,7 @@
 		A59E0E051EB1AC1400BB77A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E0E041EB1AC1400BB77A7 /* LoginViewController.swift */; };
 		A59E0E071EB1AE9E00BB77A7 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E0E061EB1AE9E00BB77A7 /* MainTableViewController.swift */; };
 		A59E0E091EB1BCE600BB77A7 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E0E081EB1BCE600BB77A7 /* PhotoViewController.swift */; };
+		A59E0E0B1EB2D89100BB77A7 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E0E0A1EB2D89100BB77A7 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A59E0E041EB1AC1400BB77A7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A59E0E061EB1AE9E00BB77A7 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		A59E0E081EB1BCE600BB77A7 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		A59E0E0A1EB2D89100BB77A7 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				A59E0E041EB1AC1400BB77A7 /* LoginViewController.swift */,
 				A59E0E061EB1AE9E00BB77A7 /* MainTableViewController.swift */,
 				A59E0E081EB1BCE600BB77A7 /* PhotoViewController.swift */,
+				A59E0E0A1EB2D89100BB77A7 /* Book.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				A59E0E071EB1AE9E00BB77A7 /* MainTableViewController.swift in Sources */,
 				A59E0E051EB1AC1400BB77A7 /* LoginViewController.swift in Sources */,
+				A59E0E0B1EB2D89100BB77A7 /* Book.swift in Sources */,
 				A59E0DF51EB18B1700BB77A7 /* ViewController.swift in Sources */,
 				A59E0DF31EB18B1700BB77A7 /* AppDelegate.swift in Sources */,
 				A59E0E091EB1BCE600BB77A7 /* PhotoViewController.swift in Sources */,

@@ -10,11 +10,12 @@ import UIKit
 
 class MainTableViewController: UITableViewController, LoginProtocol {
 
+    var loginName: String? = nil
+    
+    var appdelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+    
     @IBAction func openLoginScene(_ sender: Any) {
-//        if let loginVC = storyboard?.instantiateViewController(withIdentifier: "loginview") as? LoginViewController {
-//            loginVC.delegate = self
-//            self.present(loginVC, animated: true, completion: nil)
-//        }
+
         guard let loginVC = storyboard?.instantiateViewController(withIdentifier: "loginview") as? LoginViewController else {
             return
         }
@@ -24,7 +25,8 @@ class MainTableViewController: UITableViewController, LoginProtocol {
     }
     
     func completedLogin(name: String) {
-        print(name)
+//        print(name)
+        loginName = name
     }
     
     override func viewDidLoad() {
@@ -35,6 +37,8 @@ class MainTableViewController: UITableViewController, LoginProtocol {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,24 +50,54 @@ class MainTableViewController: UITableViewController, LoginProtocol {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if let books = appdelegate?.books {
+            return books.count
+        } else {
+            return 0
+        }
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        guard let books = appdelegate?.books else {
+            return cell
+        }
+        
+        cell.textLabel?.text = books[indexPath.row].title
+        cell.detailTextLabel?.text = books[indexPath.row].author
+        cell.imageView?.image = books[indexPath.row].coverImage
+        
+//        print("Row: \(indexPath.row)")
 
         return cell
     }
-    */
+    
 
+    override func viewWillAppear(_ animated: Bool) {
+        if let uName = loginName {
+            let alert = UIAlertController(title: "Hello", message: "\(uName)님 환영합니다.", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
+        
+            alert.addAction(okAction)
+
+            self.present(alert, animated: true) {
+                Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: {
+                    (Timer) -> Void in
+                    alert.dismiss(animated: true, completion: nil)
+                })
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
